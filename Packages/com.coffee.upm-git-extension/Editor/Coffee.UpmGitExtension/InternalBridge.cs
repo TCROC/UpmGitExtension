@@ -195,7 +195,7 @@ namespace Coffee.UpmGitExtension
 
         internal static UpmPackageVersion ToPackageVersion(this AvailableVersion self, UpmPackageVersion baseInfo)
         {
-            var semver = SemVersion.Parse(self.refNameText);
+            var semver = SemVersion.Parse(self.refNameVersion);
 
             var newPInfo = JsonUtility.FromJson<UnityEditor.PackageManager.PackageInfo>(JsonUtility.ToJson(baseInfo.packageInfo));
             newPInfo.m_Version = self.version;
