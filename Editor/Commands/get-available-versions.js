@@ -12,11 +12,16 @@ const path = require("path");
 // Input
 console.log("\nInput");
 const packageName = process.argv[2];
-const repoUrl = process.argv[3];
 const unityVersion = process.argv[4];
+const rawRepoUrl = process.argv[3];
+const matchUrl = rawRepoUrl.match(/^(.*?)(\?path=(.*))?$/);
+const repoUrl = matchUrl[1]
+const subDir = (matchUrl[3] || '.') + '/'
 
-console.log(`  repoUrl: ${repoUrl}`);
 console.log(`  packageName: ${packageName}`);
+console.log(`  rawRepoUrl: ${rawRepoUrl}`);
+console.log(`  repoUrl: ${repoUrl}`);
+console.log(`  subDir: ${subDir}`);
 console.log(`  unityVersion: ${unityVersion}`);
 
 if (!repoUrl || !packageName || !unityVersion) process.exit(1);
@@ -26,8 +31,18 @@ const hashCode = str => {
     .reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0, 0)
 }
 
+const groupBy = (array, property) => {
+  return array.reduce(
+    (group, item) => Object.assign(group, {
+      [item[property]]: (group[item[property]] || []).concat(item)
+    }),
+    {}
+  )
+
+}
+
 const id = hashCode(`${packageName}@${repoUrl}`);
-const repoDir = `Library/UGE/packages/${id}}`;
+const repoDir = `Library/UGE/packages/${id}`;
 const resultDir = `Library/UGE/results`;
 const outputFile = path.resolve(`${resultDir}/${id}.json`);
 const lockFile = ".lock";
@@ -37,13 +52,16 @@ const mkdirSyncRecrusive = postPath => {
     const path = item ? (acc ? [acc, item].join("/") : item) : "";
     if (path && !fs.existsSync(path)) {
       console.log(`  Make dir: ${path}`);
-      fs.mkdirSync(path);
+      try {
+        fs.mkdirSync(path);
+      } catch (e) {
+      }
     }
     return path;
   }, "");
 };
 
-const IsSupported = (version, unityVersion) => {
+const isSupportedVersion = (version, unityVersion) => {
   const regVersion = /^(\d+)\.(\d+)\.(\d+)(.*)$/;
   const v = version.match(regVersion);
   const uv = unityVersion.match(regVersion);
@@ -56,12 +74,13 @@ const IsSupported = (version, unityVersion) => {
 const parseRef = text => {
   try {
     const regRefName = /^refs\/(tags\/|remotes\/origin\/)([^\/]+)$/;
+    const hash = text.split(/\s+/)[0];
     const ref = text.split(/\s+/)[1];
     const refName = ref.match(regRefName)[2];
 
     console.log(`  checkout: ${ref}`);
-    execSync(`git checkout -q ${ref} -- package.json package.json.meta`);
-    const p = JSON.parse(fs.readFileSync("package.json", "utf8"));
+    execSync(`git checkout -q ${ref} -- ${subDir}package.json ${subDir}package.json.meta`);
+    const p = JSON.parse(fs.readFileSync(`${subDir}package.json`, "utf8"));
 
     // Check package name.
     if (packageName != "all" && p.name != packageName) {
@@ -75,15 +94,18 @@ const parseRef = text => {
     const unity = p.unity || "2018.3";
     const unityRelease = p.unityRelease || "0a0";
     const supportedVersion = `${unity}.${unityRelease}`;
-    if (!IsSupported(supportedVersion, unityVersion)) {
+    if (!isSupportedVersion(supportedVersion, unityVersion)) {
       console.error(
         `error: ${unityVersion} is not supported. Supported unity versions are '>=${supportedVersion}'`
       );
       return undefined;
     }
 
+    const regId = new RegExp(`((release|v|ver|version)?[.-]?)*${p.version}`);
+    const id = refName.replace(regId, "");
+
     //
-    return { packageName: p.name, repoUrl, version: p.version, refName };
+    return { packageName: p.name, repoUrl: rawRepoUrl, version: p.version, refName, hash, id };
   } catch (e) {
     return undefined;
   }
@@ -129,14 +151,20 @@ try {
 
   // Get valid package references
   console.log("\n>> Get valid package references");
-  const versions = execSync("git show-ref", { encoding: "utf-8" })
+  const allVersions = execSync("git show-ref", { encoding: "utf-8" })
     .split(/[\r\n]+/)
     .map(x => parseRef(x))
-    .filter(x => x);
+    .filter(x => x)
+    .sort((a, b) => a.id < b.id ? -1 : b.id < a.id ? 1 : 0);
+
+  // Sort by version id and get first element
+  const grouped = groupBy(allVersions, "hash");
+  const versions = Object.keys(grouped)
+    .map(x => grouped[x].find(_ => true))
 
   // Output valid package references to file
-  console.log(`\n>> Output valid package references to file: ${outputFile}`);
-  console.log(versions);
+  console.log(`\n>> Output valid package (${versions.length} versions) references to file: ${outputFile}`);
+  console.dir(versions);
   fs.writeFileSync(outputFile, JSON.stringify({ versions }, space = 2), "utf-8");
 
   console.log("\n######## Complete ########");

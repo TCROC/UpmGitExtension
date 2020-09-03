@@ -1,105 +1,62 @@
-# [1.1.0-preview.13](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.12...v1.1.0-preview.13) (2020-05-27)
+## [1.3.1](https://github.com/mob-sakai/UpmGitExtension/compare/v1.3.0...v1.3.1) (2020-08-14)
 
 
 ### Bug Fixes
 
-* only transform if it is not already in the SSH format, close [#47](https://github.com/mob-sakai/UpmGitExtension/issues/47) ([f2e71b2](https://github.com/mob-sakai/UpmGitExtension/commit/f2e71b2860f5515cf4a9b15e7947bd9d226e50ff))
+* Cannot implicitly convert type 'UnityEditor.PackageManager.UI.IPageManager' ([4122c94](https://github.com/mob-sakai/UpmGitExtension/commit/4122c948e50c7fe45490574859e65a7604e31339)), closes [#93](https://github.com/mob-sakai/UpmGitExtension/issues/93)
+* Package resolver is not working in Unity 2020.2 ([a3d6140](https://github.com/mob-sakai/UpmGitExtension/commit/a3d61400e1cb17074d3bbbbe780a392202661057))
+* uninstall package from lock file ([ab696d8](https://github.com/mob-sakai/UpmGitExtension/commit/ab696d865abf48be48fa5a3725f29db0626d0a6d))
 
-# [1.1.0-preview.12](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.11...v1.1.0-preview.12) (2020-03-07)
-
-
-### Bug Fixes
-
-* console log is a little chatty [#82](https://github.com/mob-sakai/UpmGitExtension/issues/82) ([a632d7f](https://github.com/mob-sakai/UpmGitExtension/commit/a632d7fc2f560967ca982b0f3b68334214f83ad5))
-* releases wrongly being flagged as "preview" ([a32069e](https://github.com/mob-sakai/UpmGitExtension/commit/a32069efa78c028ebc1ac3b0daa2d86f3cd7ff58)), closes [#83](https://github.com/mob-sakai/UpmGitExtension/issues/83)
+# [1.3.0](https://github.com/mob-sakai/UpmGitExtension/compare/v1.2.3...v1.3.0) (2020-08-13)
 
 
 ### Features
 
-* add keywords to package.json ([c0ee69e](https://github.com/mob-sakai/UpmGitExtension/commit/c0ee69ea21ec08075396a83420b8d1c8f3457ac9))
+* support Unity 2020.2 ([8f8e258](https://github.com/mob-sakai/UpmGitExtension/commit/8f8e2585399ccdfefcef7a0621faf94f3bbdc024)), closes [#92](https://github.com/mob-sakai/UpmGitExtension/issues/92)
 
-# [1.1.0-preview.11](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.10...v1.1.0-preview.11) (2020-02-27)
+## [1.2.3](https://github.com/mob-sakai/UpmGitExtension/compare/v1.2.2...v1.2.3) (2020-08-11)
 
 
 ### Bug Fixes
 
-* **OSC:** update osc ([2ff8243](https://github.com/mob-sakai/UpmGitExtension/commit/2ff8243bf99b9a90704889cdecacdfde1efe9e4b))
+* path query parameter is supported in Unity 2019.3.4 or later ([70b169f](https://github.com/mob-sakai/UpmGitExtension/commit/70b169f5a12d7694ef7f228463a3d976885f3f17))
+
+## [1.2.2](https://github.com/mob-sakai/UpmGitExtension/compare/v1.2.1...v1.2.2) (2020-08-11)
+
+
+### Bug Fixes
+
+* update readme ([28600fd](https://github.com/mob-sakai/UpmGitExtension/commit/28600fdc23479c99e10a2c5789314bf671c6ac1d))
+
+## [1.2.1](https://github.com/mob-sakai/UpmGitExtension/compare/v1.2.0...v1.2.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* Not recompiling on first launch ([57c3023](https://github.com/mob-sakai/UpmGitExtension/commit/57c3023d0bfd6906283b0d5931cccbc1c6868e67))
+
+# [1.2.0](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.2...v1.2.0) (2020-08-11)
 
 
 ### Features
 
-* Azure Dev Ops and Branch Support in Unity 2019.1 or later ([3ed528a](https://github.com/mob-sakai/UpmGitExtension/commit/3ed528ab5ff201db7e5e9f60ee584ca8edeb9360)), closes [#80](https://github.com/mob-sakai/UpmGitExtension/issues/80)
+* support path query parameter (for Unity 2019.3.4f1 or later) ([ad55dd3](https://github.com/mob-sakai/UpmGitExtension/commit/ad55dd346a1835d7459e668923a0c1de056ee274)), closes [#77](https://github.com/mob-sakai/UpmGitExtension/issues/77)
 
-# [1.1.0-preview.10](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.9...v1.1.0-preview.10) (2020-02-10)
-
-
-### Bug Fixes
-
-* **OSC:** update osc ([d89d480](https://github.com/mob-sakai/UpmGitExtension/commit/d89d4809e3f842029653306475f4a60f4615ca57))
-
-# [1.1.0-preview.9](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.8...v1.1.0-preview.9) (2020-02-06)
+## [1.1.2](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.1...v1.1.2) (2020-08-11)
 
 
 ### Bug Fixes
 
-* **OSC:** update osc ([2117ed7](https://github.com/mob-sakai/UpmGitExtension/commit/2117ed722054fbae34c18ec8e11ba76da0ecc0c1))
+* Windows defender reporting OpenSesame compilers as a Trojan ([96b163b](https://github.com/mob-sakai/UpmGitExtension/commit/96b163b0189f071652f6a2d472494cb2858e13cc)), closes [#91](https://github.com/mob-sakai/UpmGitExtension/issues/91)
 
-# [1.1.0-preview.8](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.7...v1.1.0-preview.8) (2020-02-05)
-
-
-### Bug Fixes
-
-* js script path ([fb821ad](https://github.com/mob-sakai/UpmGitExtension/commit/fb821ada2f44b6a095dbaad5a836191ba467413f))
-
-# [1.1.0-preview.7](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.6...v1.1.0-preview.7) (2020-02-05)
+## [1.1.1](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0...v1.1.1) (2020-08-11)
 
 
 ### Bug Fixes
 
-* fix release script ([95a4921](https://github.com/mob-sakai/UpmGitExtension/commit/95a4921f7df0ec06bfd95b46c2e0155d42e35bb7))
-* SemVersion is ambiguous reference ([c066389](https://github.com/mob-sakai/UpmGitExtension/commit/c06638935fd1d02b769ff7dd1bb437bb2c127e12))
+* the same version is recommended after updating the package ([c766454](https://github.com/mob-sakai/UpmGitExtension/commit/c766454affcbdf0fecf06f0b929aefe5727dd871)), closes [#84](https://github.com/mob-sakai/UpmGitExtension/issues/84)
 
-
-### Features
-
-* support 2020.1 (WIP) ([5d96f1f](https://github.com/mob-sakai/UpmGitExtension/commit/5d96f1fbcaf4df492c3e488afab62f6e5e900d42))
-
-# [1.1.0-preview.6](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.5...v1.1.0-preview.6) (2020-01-28)
-
-
-### Bug Fixes
-
-* fix release script ([0313cfe](https://github.com/mob-sakai/UpmGitExtension/commit/0313cfe70a04bb6ea3f009e6dad1c044c2692c79))
-
-# [1.1.0-preview.5](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.4...v1.1.0-preview.5) (2020-01-28)
-
-
-### Bug Fixes
-
-* fix compile error ([9962277](https://github.com/mob-sakai/UpmGitExtension/commit/9962277acceacacb3e59a46b55d40997b6e4f379))
-
-# [1.1.0-preview.4](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.3...v1.1.0-preview.4) (2020-01-28)
-
-
-### Bug Fixes
-
-* fix release script ([c0f8b34](https://github.com/mob-sakai/UpmGitExtension/commit/c0f8b346584d0bbc12b69066f4aad3419b8ee0ba))
-
-# [1.1.0-preview.3](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.2...v1.1.0-preview.3) (2020-01-28)
-
-
-### Bug Fixes
-
-* fix release script ([e4cef7b](https://github.com/mob-sakai/UpmGitExtension/commit/e4cef7b112e356e8ab6428f2235fbeb4c63c1a5a))
-
-# [1.1.0-preview.2](https://github.com/mob-sakai/UpmGitExtension/compare/v1.1.0-preview.1...v1.1.0-preview.2) (2020-01-28)
-
-
-### Bug Fixes
-
-* fix release script ([162bb91](https://github.com/mob-sakai/UpmGitExtension/commit/162bb91a4129865bfecc9422487196625b6479e5))
-
-# [1.1.0-preview.1](https://github.com/mob-sakai/UpmGitExtension/compare/v1.0.1...v1.1.0-preview.1) (2020-01-28)
+# [1.1.0](https://github.com/mob-sakai/UpmGitExtension/compare/v1.0.1...v1.1.0) (2020-08-11)
 
 
 ### Bug Fixes
@@ -107,16 +64,32 @@
 * cannot install with 'upm' branch in Unity 2019.1 ([eb8ff00](https://github.com/mob-sakai/UpmGitExtension/commit/eb8ff004b536db339b8b359a71d8a1d8e3434ce5))
 * change namespace to 'Coffee.PackageManager.UI' ([4052f86](https://github.com/mob-sakai/UpmGitExtension/commit/4052f86368a4535be5064319e3a65c2267d74fc1))
 * class 'Expose' is no longer used ([6afe17e](https://github.com/mob-sakai/UpmGitExtension/commit/6afe17e77dc672a5de7f4d72f99e215d4df2502a))
+* console log is a little chatty [#82](https://github.com/mob-sakai/UpmGitExtension/issues/82) ([a632d7f](https://github.com/mob-sakai/UpmGitExtension/commit/a632d7fc2f560967ca982b0f3b68334214f83ad5))
 * delete unused projects ([9714d16](https://github.com/mob-sakai/UpmGitExtension/commit/9714d16e72bc8e00d7d74ee047471998ecb56908))
 * extensions for PackageDetails ([616bd00](https://github.com/mob-sakai/UpmGitExtension/commit/616bd0095c602900b8a5fe89ecbf0309b15bd282))
+* fix compile error ([9962277](https://github.com/mob-sakai/UpmGitExtension/commit/9962277acceacacb3e59a46b55d40997b6e4f379))
 * fix host logo ([b54078f](https://github.com/mob-sakai/UpmGitExtension/commit/b54078fdc82e38c09943f10fb4e6b51d46a99bdc))
+* fix release script ([95a4921](https://github.com/mob-sakai/UpmGitExtension/commit/95a4921f7df0ec06bfd95b46c2e0155d42e35bb7))
+* fix release script ([0313cfe](https://github.com/mob-sakai/UpmGitExtension/commit/0313cfe70a04bb6ea3f009e6dad1c044c2692c79))
+* fix release script ([c0f8b34](https://github.com/mob-sakai/UpmGitExtension/commit/c0f8b346584d0bbc12b69066f4aad3419b8ee0ba))
+* fix release script ([e4cef7b](https://github.com/mob-sakai/UpmGitExtension/commit/e4cef7b112e356e8ab6428f2235fbeb4c63c1a5a))
+* fix release script ([162bb91](https://github.com/mob-sakai/UpmGitExtension/commit/162bb91a4129865bfecc9422487196625b6479e5))
 * fix script to get available versions ([f95b560](https://github.com/mob-sakai/UpmGitExtension/commit/f95b5601c3d594b3a0780594862d8d2016a405ea))
 * fix supported version check ([f4b25ef](https://github.com/mob-sakai/UpmGitExtension/commit/f4b25ef284e5a6e50afcd288b956a965fe72a0cc))
 * InstallPackageWindow uses new scheme ([44c952e](https://github.com/mob-sakai/UpmGitExtension/commit/44c952e407cf8b6ceb763b82f31e7b2a0649500a))
+* js script path ([fb821ad](https://github.com/mob-sakai/UpmGitExtension/commit/fb821ada2f44b6a095dbaad5a836191ba467413f))
+* KeyNotFoundException is thrown for every package found when trying to install ([4720490](https://github.com/mob-sakai/UpmGitExtension/commit/4720490ec2c6c415d83c680cc539ad9d3ee3ad86)), closes [#90](https://github.com/mob-sakai/UpmGitExtension/issues/90)
+* only transform if it is not already in the SSH format, close [#47](https://github.com/mob-sakai/UpmGitExtension/issues/47) ([f2e71b2](https://github.com/mob-sakai/UpmGitExtension/commit/f2e71b2860f5515cf4a9b15e7947bd9d226e50ff))
+* releases wrongly being flagged as "preview" ([a32069e](https://github.com/mob-sakai/UpmGitExtension/commit/a32069efa78c028ebc1ac3b0daa2d86f3cd7ff58)), closes [#83](https://github.com/mob-sakai/UpmGitExtension/issues/83)
+* the package version list is not updated (javascript) ([e496c62](https://github.com/mob-sakai/UpmGitExtension/commit/e496c62edbbe6e580f70d17c1395c563160778e5))
+* **OSC:** update osc ([2ff8243](https://github.com/mob-sakai/UpmGitExtension/commit/2ff8243bf99b9a90704889cdecacdfde1efe9e4b))
+* **OSC:** update osc ([d89d480](https://github.com/mob-sakai/UpmGitExtension/commit/d89d4809e3f842029653306475f4a60f4615ca57))
+* **OSC:** update osc ([2117ed7](https://github.com/mob-sakai/UpmGitExtension/commit/2117ed722054fbae34c18ec8e11ba76da0ecc0c1))
 * no versions are loaded from versions json file ([e9da6f3](https://github.com/mob-sakai/UpmGitExtension/commit/e9da6f34692cd0ad3bef4de62c49072c1e069169))
 * no versions on Windows ([4843bfa](https://github.com/mob-sakai/UpmGitExtension/commit/4843bfac6fe2f6342d916a497dc7dfa2021d48b4))
 * remove OpenSesameCompiler devs ([d1ca10c](https://github.com/mob-sakai/UpmGitExtension/commit/d1ca10cb556364ced49c5155ee3c07a3a6414947))
 * remove settings ([3e7ba56](https://github.com/mob-sakai/UpmGitExtension/commit/3e7ba56c35fd1fee8c3c3d1563a0f4905a711031))
+* SemVersion is ambiguous reference ([c066389](https://github.com/mob-sakai/UpmGitExtension/commit/c06638935fd1d02b769ff7dd1bb437bb2c127e12))
 * support 2019.1 ([5ff79fb](https://github.com/mob-sakai/UpmGitExtension/commit/5ff79fb276bda057cd6a9a3c82d8e646221c7fe9))
 * support 2019.2 ([2497442](https://github.com/mob-sakai/UpmGitExtension/commit/24974420304a55a71fd8ccb1a3e49f828e8b4818))
 * versions file is deleted on main thread ([e346b91](https://github.com/mob-sakai/UpmGitExtension/commit/e346b91f4dcc0fa10e2bc34bb1f8dded86477a04))
@@ -125,7 +98,9 @@
 ### Features
 
 * add develop menu ([1c8c2a0](https://github.com/mob-sakai/UpmGitExtension/commit/1c8c2a0f8fb001b07935d12d7fac9f20a9cb6cc8))
+* add keywords to package.json ([c0ee69e](https://github.com/mob-sakai/UpmGitExtension/commit/c0ee69ea21ec08075396a83420b8d1c8f3457ac9))
 * add open sesame compiler (portable mode) ([230137e](https://github.com/mob-sakai/UpmGitExtension/commit/230137e482e19fd767018c149908ceb355952f55))
+* Azure Dev Ops and Branch Support in Unity 2019.1 or later ([3ed528a](https://github.com/mob-sakai/UpmGitExtension/commit/3ed528ab5ff201db7e5e9f60ee584ca8edeb9360)), closes [#80](https://github.com/mob-sakai/UpmGitExtension/issues/80)
 * change assembly name and namespace to Coffee.UpmGitExtension ([483cc8f](https://github.com/mob-sakai/UpmGitExtension/commit/483cc8f14d3445d29c7a5bf75968a37ca8a01403))
 * change caching scheme for available package versions ([fda6dbf](https://github.com/mob-sakai/UpmGitExtension/commit/fda6dbf256e585039ba141606be34c1443dce794))
 * extensions for supporting multiple-versions ([5e54dc2](https://github.com/mob-sakai/UpmGitExtension/commit/5e54dc272b4fa49091956e2eb1ec368fd83a1b4b))
@@ -134,6 +109,8 @@
 * show all available versions in InstallPackageWindow for mono-repo ([fc21042](https://github.com/mob-sakai/UpmGitExtension/commit/fc2104272a906316addd0fb8a6ffa057bbb50847))
 * show update indicator ([9133766](https://github.com/mob-sakai/UpmGitExtension/commit/9133766de2213e4ac105f8b3c945b6d68051f5a2))
 * support 2019.3 ([5f8ce50](https://github.com/mob-sakai/UpmGitExtension/commit/5f8ce50957288c74026972ba840f4fb0a1442af6))
+* support 2020.1 (WIP) ([5d96f1f](https://github.com/mob-sakai/UpmGitExtension/commit/5d96f1fbcaf4df492c3e488afab62f6e5e900d42))
+* support Unity 2020.1 ([c879375](https://github.com/mob-sakai/UpmGitExtension/commit/c879375d1af0daf114c1be0224512671a75f9e65)), closes [#76](https://github.com/mob-sakai/UpmGitExtension/issues/76)
 * update package with locked branch name ([7b35a50](https://github.com/mob-sakai/UpmGitExtension/commit/7b35a500ce8e5c4b392231a94b9a685b9f15c727))
 * use nodejs instead of shell to get available versions ([0ff293b](https://github.com/mob-sakai/UpmGitExtension/commit/0ff293b38c36fa96ec4b85f4b3a228109b74601e))
 
